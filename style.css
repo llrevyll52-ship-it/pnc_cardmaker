@@ -123,10 +123,10 @@ body {
 
 .name-right-layer {
     position: absolute;
-    left: 987px;
-    top: 3013px;
-    width: auto;
-    height: auto;
+    left: 0;
+    top: 0;
+    width: 2600px;
+    height: 3600px;
     z-index: 34;
     pointer-events: none;
 }
