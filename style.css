@@ -88,33 +88,119 @@ body {
 }
 
 .control-panel {
-    width: 340px;
+    width: 420px;
+    min-width: 420px;
+
+    background: #f2f2f2;
+    color: #333;
+
+    border-radius: 24px;
+
+    padding: 24px;
+
     display: flex;
     flex-direction: column;
     gap: 18px;
+
+    height: fit-content;
 }
 
 .control-panel h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    text-align: center;
+    color: #d90000;
+    font-size: 32px;
 }
 
-label {
+.tool-tabs {
+    display: flex;
+    gap: 6px;
+
+    background: #e7e7e7;
+
+    padding: 6px;
+
+    border-radius: 12px;
+}
+
+.tool-tab {
+    flex: 1;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.tool-tab.active {
+    background: white;
+    color: #d90000;
+}
+
+.tool-tip {
+    background: #ffe5e5;
+
+    color: #ff2e2e;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.section-title {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    border-bottom: 2px solid #333;
+
+    padding-bottom: 6px;
+}
+
+.input-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
+    gap: 6px;
 }
 
-input,
-button {
-    padding: 10px 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-}
-
-button {
-    cursor: pointer;
+.input-group label {
     font-weight: 700;
+}
+
+.input-group input {
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    padding: 12px;
+}
+
+.primary-button {
+    margin-top: 12px;
+
+    background: #d90000;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
 }
