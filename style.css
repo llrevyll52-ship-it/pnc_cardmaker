@@ -63,12 +63,17 @@
     z-index: 91;
 }
 
-.name-line-layer {
+.name-bar {
     position: absolute;
+
     left: 340px;
     top: 3262px;
-    width: 372px;
+
+    width: 220px;
     height: 70px;
+
+    background: #f5ef00;
+
     z-index: 92;
 }
 
