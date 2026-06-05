@@ -4,61 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNC Card Maker</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="app">
-        <section class="preview-panel">
-            <div class="preview-wrap">
-                <div class="card-canvas" id="cardCanvas">
-                    <img class="layer frame" src="cardmaker/08-frame/L1-frame.png" alt="">
-                    <img class="layer title-layer" src="cardmaker/07-title/L4-title.png" alt="">
 
-                    <div class="name-group" id="nameGroup">
-                        <img class="name-left" src="cardmaker/06-name/L9-name_L.png" alt="">
-                        <img class="name-line" id="nameLine" src="cardmaker/06-name/L8-name_line.png" alt="">
-                        <img class="name-right" id="nameRight" src="cardmaker/06-name/L7-name_R.png" alt="">
-                        <div class="name-text" id="nameText">NOAH</div>
+    <div class="app">
+
+        <!-- 카드 미리보기 -->
+
+        <div class="preview-panel">
+
+            <div class="card-canvas" id="cardCanvas">
+
+                <!-- 프레임 -->
+
+                <img
+                    class="layer frame"
+                    src="cardmaker/08-frame/L1-frame.png"
+                    alt=""
+                >
+
+                <!-- 타이틀 -->
+
+                <img
+                    class="layer title-layer"
+                    src="cardmaker/07-title/L4-title.png"
+                    alt=""
+                >
+
+                <!-- 이름 영역 -->
+
+                <div class="name-group">
+
+                    <img
+                        id="nameLeft"
+                        src="cardmaker/06-name/L9-name_L.png"
+                        alt=""
+                    >
+
+                    <img
+                        id="nameLine"
+                        src="cardmaker/06-name/L8-name_line.png"
+                        alt=""
+                    >
+
+                    <img
+                        id="nameRight"
+                        src="cardmaker/06-name/L7-name_R.png"
+                        alt=""
+                    >
+
+                    <div id="nameText">
+                        NOAH
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="control-panel">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 작업 패널 -->
+
+        <div class="control-panel">
+
             <h1>PNC CARD MAKER</h1>
 
-<div class="tool-tabs">
-    <button class="tool-tab active">Main Card</button>
-    <button class="tool-tab">Image</button>
-    <button class="tool-tab">Icons</button>
-</div>
+            <div class="tool-tip">
+                이름 영역 자동 조절 테스트 단계
+            </div>
 
-<div class="tool-tip">
-    우측 미리보기 영역의 사진을 직접 드래그하여 위치를 조절할 수 있습니다.
-</div>
+            <div class="section-title">
+                Main Card
+            </div>
 
-<div class="section-title">
-    Main Card
-</div>
+            <div class="input-group">
 
-<div class="input-group">
-    <label>이름</label>
-    <input type="text" id="nameInput" value="NOAH">
-</div>
+                <label for="nameInput">
+                    이름
+                </label>
 
-<button class="primary-button" id="downloadBtn">
-    PNG 저장
-</button>
+                <input
+                    id="nameInput"
+                    type="text"
+                    value="NOAH"
+                >
 
-            <label>
-                이름
-                <input type="text" id="nameInput" value="NOAH">
-            </label>
+            </div>
 
-            <button id="downloadBtn" type="button">PNG 저장</button>
-        </section>
-    </main>
+            <button
+                id="downloadBtn"
+                class="primary-button"
+            >
+                PNG 저장
+            </button>
+
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
