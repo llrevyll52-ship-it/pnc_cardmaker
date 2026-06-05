@@ -105,3 +105,64 @@
         0 10px 10px rgba(0, 0, 0, 0.75),
         0 0 18px rgba(0, 0, 0, 0.60);
 }
+
+/* ===== 이름 영역 최종 강제 보정 ===== */
+
+.frame-line-layer {
+    z-index: 80 !important;
+}
+
+.title-layer {
+    z-index: 70 !important;
+}
+
+.name-parts {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 2600px !important;
+    height: 3600px !important;
+    z-index: 90 !important;
+    pointer-events: none !important;
+}
+
+.name-left-layer {
+    position: absolute !important;
+    left: 42px !important;
+    top: 2990px !important;
+    width: 300px !important;
+    height: auto !important;
+    z-index: 91 !important;
+}
+
+.name-line-layer {
+    position: absolute !important;
+    left: 46px !important;
+    top: 3280px !important;
+    width: 372px !important;
+    height: 70px !important;
+    z-index: 92 !important;
+}
+
+.name-right-layer {
+    position: absolute !important;
+    left: 418px !important;
+    top: 2990px !important;
+    width: 104px !important;
+    height: 330px !important;
+    z-index: 93 !important;
+}
+
+.name-text {
+    left: 68px !important;
+    top: 3014px !important;
+    z-index: 95 !important;
+
+    text-shadow:
+        2px 0 #ffffff,
+        -2px 0 #ffffff,
+        0 2px #ffffff,
+        0 -2px #ffffff,
+        0 10px 10px rgba(0, 0, 0, 0.75),
+        0 0 18px rgba(0, 0, 0, 0.60) !important;
+}
