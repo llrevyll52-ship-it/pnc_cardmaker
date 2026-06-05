@@ -1,189 +1,94 @@
-@font-face {
-    font-family: "Esamanru";
-    src: url("./esamanru_TTF(Win)/esamanru Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
+const nameInput = document.getElementById("nameInput");
+const nameText = document.getElementById("nameText");
+const nameLine = document.getElementById("nameLine");
+const nameRight = document.getElementById("nameRight");
+const cardCanvas = document.getElementById("cardCanvas");
+
+let previewScale = 0.32;
+
+const MIN_SCALE = 0.12;
+const MAX_SCALE = 0.6;
+const SCALE_STEP = 0.04;
+
+const BASE_NAME = "이즈";
+
+const TEXT_X = 463;
+const LINE_X = 460;
+const NAME_R_GAP = 15;
+
+function applyPreviewScale() {
+    cardCanvas.style.transform = `scale(${previewScale})`;
 }
 
-@font-face {
-    font-family: "Avenir Black";
-    src: url("./Avenir Black/fonts/Avenir Black.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
+function setNameFont(value) {
+    nameText.classList.remove("font-kor", "font-eng");
+
+    if (/[가-힣]/.test(value)) {
+        nameText.classList.add("font-kor");
+    } else {
+        nameText.classList.add("font-eng");
+    }
 }
 
-* {
-    box-sizing: border-box;
+function getNameFontSize(length) {
+    if (length <= 2) return 320;
+    if (length === 3) return 300;
+    if (length === 4) return 275;
+    if (length === 5) return 250;
+    return 225;
 }
 
-body {
-    margin: 0;
-    background: #202020;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+function updateName() {
+    const value = nameInput.value.trim() || BASE_NAME;
+    const length = value.length;
+
+    nameText.textContent = value;
+    setNameFont(value);
+    nameText.style.fontSize = `${getNameFontSize(length)}px`;
+
+    requestAnimationFrame(() => {
+        const textWidth = nameText.offsetWidth;
+        const charCount = Math.max(value.length, 1);
+        const avgCharWidth = textWidth / charCount;
+
+        const lineEnd = TEXT_X + textWidth - avgCharWidth * 0.65;
+        const lineWidth = Math.max(160, lineEnd - LINE_X);
+
+        nameLine.style.width = `${lineWidth}px`;
+
+        const nameRightX = TEXT_X + textWidth + NAME_R_GAP;
+        nameRight.style.transform = `translateX(${nameRightX - 987}px)`;
+    });
 }
 
-.app {
-    display: flex;
-    gap: 32px;
-    padding: 32px;
+function handleZoom(event) {
+    if (event.target === nameInput) {
+        return;
+    }
+
+    const key = event.key;
+
+    if (key !== "+" && key !== "=" && key !== "-") {
+        return;
+    }
+
+    event.preventDefault();
+
+    if (key === "+" || key === "=") {
+        previewScale = Math.min(MAX_SCALE, previewScale + SCALE_STEP);
+    }
+
+    if (key === "-") {
+        previewScale = Math.max(MIN_SCALE, previewScale - SCALE_STEP);
+    }
+
+    applyPreviewScale();
 }
 
-.preview-panel {
-    width: 900px;
-    height: 1200px;
-    overflow: auto;
-    background: #111111;
-    border: 1px solid #444444;
-}
+nameInput.addEventListener("input", updateName);
+window.addEventListener("keydown", handleZoom);
 
-.card-canvas {
-    position: relative;
-    width: 2600px;
-    height: 3600px;
-    transform-origin: top left;
-    background: transparent;
-}
-
-.layer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2600px;
-    height: 3600px;
-    pointer-events: none;
-}
-
-/* 레이어 순서 */
-/* z-index 숫자가 클수록 위 */
-
-.character-layer { z-index: 1; }
-.frame-layer { z-index: 10; }
-.title-layer { z-index: 20; }
-
-.name-layer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2600px;
-    height: 3600px;
-    z-index: 30;
-    pointer-events: none;
-}
-
-.frame-line-layer { z-index: 40; }
-
-.class-layer { z-index: 50; }
-.condition-layer { z-index: 60; }
-
-.combine-left-layer,
-.combine-right-layer { z-index: 70; }
-
-.force-layer { z-index: 80; }
-
-.name-left-layer {
-    position: absolute;
-    left: 428px;
-    top: 2998px;
-    width: 73px;
-    height: 60px;
-    z-index: 31;
-}
-
-.name-line {
-    position: absolute;
-    left: 460px;
-    top: 3267px;
-    width: 160px;
-    height: 70px;
-    background: #fff200;
-    z-index: 32;
-}
-
-.name-text {
-    position: absolute;
-    left: 463px;
-    top: 3014px;
-    z-index: 33;
-
-    color: #ffffff;
-    font-family: "Esamanru", Arial, sans-serif;
-    font-size: 320px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0;
-    white-space: nowrap;
-
-    -webkit-text-stroke: 2px #ffffff;
-
-    text-shadow:
-        0 10px 10px rgba(0, 0, 0, 0.75),
-        0 0 18px rgba(0, 0, 0, 0.60);
-}
-
-.name-right-layer {
-    position: absolute;
-    left: 987px;
-    top: 3013px;
-    width: 104px;
-    height: 330px;
-    z-index: 34;
-    pointer-events: none;
-}
-
-/* ========================= */
-/* 조작 패널 */
-/* ========================= */
-
-.control-panel {
-    width: 320px;
-    padding: 24px;
-    background: #181818;
-    border: 1px solid #444444;
-}
-
-.control-panel h1 {
-    margin: 0 0 20px;
-    font-size: 24px;
-}
-
-.tool-tip {
-    margin-bottom: 24px;
-    color: #cccccc;
-    font-size: 14px;
-}
-
-.section-title {
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    font-size: 14px;
-    color: #dddddd;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 18px;
-}
-
-.primary-button {
-    width: 100%;
-    padding: 12px;
-    border: 0;
-    background: #fff200;
-    color: #000000;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-}
+window.addEventListener("load", () => {
+    applyPreviewScale();
+    updateName();
+});
