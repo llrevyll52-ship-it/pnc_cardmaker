@@ -197,3 +197,10 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+
+/* L7-name_R 위치 강제 테스트 */
+.name-right-window {
+    left: 700px !important;
+    top: 2600px !important;
+    outline: 5px solid red !important;
+}
