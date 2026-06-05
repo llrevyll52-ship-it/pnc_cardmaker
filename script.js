@@ -21,13 +21,19 @@ function updateName() {
     requestAnimationFrame(() => {
         const baseTextWidth = 330;
         const baseLineWidth = 372;
-        const baseRightLeft = 833;
+        const baseRightLeft = 712;
 
         const textWidth = nameText.getBoundingClientRect().width;
-        const extraWidth = Math.max(0, textWidth - baseTextWidth);
+        const charCount = value.length;
+        const averageCharWidth = textWidth / Math.max(charCount, 1);
 
-        nameLine.style.width = `${baseLineWidth + extraWidth}px`;
-        nameRight.style.left = `${baseRightLeft + extraWidth}px`;
+        const lineTargetWidth = textWidth - averageCharWidth * 0.7;
+
+        const extraLineWidth = Math.max(0, lineTargetWidth - baseTextWidth);
+        const extraRightMove = Math.max(0, textWidth - baseTextWidth);
+
+        nameLine.style.width = `${baseLineWidth + extraLineWidth}px`;
+        nameRight.style.left = `${baseRightLeft + extraRightMove}px`;
     });
 }
 
