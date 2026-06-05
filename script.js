@@ -20,18 +20,12 @@ function updateName() {
 
     requestAnimationFrame(() => {
         const textWidth = nameText.getBoundingClientRect().width;
-        const charCount = Math.max(value.length, 1);
-        const charWidth = textWidth / charCount;
 
-        const baseLineWidth = 372;
-        const baseRightLeft = 418;
+        const leftStart = 68;
 
-        const lineWidth = Math.max(
-            baseLineWidth,
-            textWidth - charWidth * 0.7
-        );
-
-        const rightLeft = 68 + textWidth + 28;
+        // PSD 기준
+        const lineWidth = textWidth + 25;
+        const rightLeft = leftStart + textWidth + 40;
 
         nameLine.style.width = `${lineWidth}px`;
         nameRight.style.left = `${rightLeft}px`;
