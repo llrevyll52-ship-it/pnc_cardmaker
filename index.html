@@ -12,53 +12,21 @@
     <div class="app">
 
         <!-- 카드 미리보기 -->
-
         <div class="preview-panel">
 
             <div class="card-canvas" id="cardCanvas">
 
-                <!-- 프레임 -->
-
-                <img
-                    class="layer frame"
-                    src="cardmaker/08-frame/L1-frame.png"
-                    alt=""
-                >
-
-                <!-- 타이틀 -->
-
-                <img
-                    class="layer title-layer"
-                    src="cardmaker/07-title/L4-title.png"
-                    alt=""
-                >
+                <!-- 기본 레이어 -->
+                <img class="layer frame-layer" src="cardmaker/08-frame/L1-frame.png" alt="">
+                <img class="layer title-layer" src="cardmaker/07-title/L4-title.png" alt="">
 
                 <!-- 이름 영역 -->
+                <div class="name-group" id="nameGroup">
+                    <img class="name-part name-left" id="nameLeft" src="cardmaker/06-name/L9-name_L.png" alt="">
+                    <img class="name-part name-line" id="nameLine" src="cardmaker/06-name/L8-name_line.png" alt="">
+                    <img class="name-part name-right" id="nameRight" src="cardmaker/06-name/L7-name_R.png" alt="">
 
-                <div class="name-group">
-
-                    <img
-                        id="nameLeft"
-                        src="cardmaker/06-name/L9-name_L.png"
-                        alt=""
-                    >
-
-                    <img
-                        id="nameLine"
-                        src="cardmaker/06-name/L8-name_line.png"
-                        alt=""
-                    >
-
-                    <img
-                        id="nameRight"
-                        src="cardmaker/06-name/L7-name_R.png"
-                        alt=""
-                    >
-
-                    <div id="nameText">
-                        NOAH
-                    </div>
-
+                    <div class="name-text" id="nameText">NOAH</div>
                 </div>
 
             </div>
@@ -66,7 +34,6 @@
         </div>
 
         <!-- 작업 패널 -->
-
         <div class="control-panel">
 
             <h1>PNC CARD MAKER</h1>
@@ -80,23 +47,11 @@
             </div>
 
             <div class="input-group">
-
-                <label for="nameInput">
-                    이름
-                </label>
-
-                <input
-                    id="nameInput"
-                    type="text"
-                    value="NOAH"
-                >
-
+                <label for="nameInput">이름</label>
+                <input id="nameInput" type="text" value="NOAH">
             </div>
 
-            <button
-                id="downloadBtn"
-                class="primary-button"
-            >
+            <button id="downloadBtn" class="primary-button">
                 PNG 저장
             </button>
 
