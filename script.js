@@ -15,30 +15,26 @@ function applyPreviewScale() {
 }
 
 function updateName() {
-
-    const value =
-        nameInput.value.trim() || "NAME";
-
+    const value = nameInput.value.trim() || "NAME";
     nameText.textContent = value;
 
     requestAnimationFrame(() => {
 
+        const baseTextWidth = 700;
+        const baseLineWidth = 372;
+        const baseRightLeft = 800;
+
         const textWidth =
             nameText.getBoundingClientRect().width;
 
-        const baseWidth = 700;
-
         const extraWidth =
-            Math.max(0, textWidth - baseWidth);
+            Math.max(0, textWidth - baseTextWidth);
 
-        const scaleX =
-            1 + (extraWidth / 400);
+        nameLine.style.width =
+            `${baseLineWidth + extraWidth}px`;
 
-        nameLine.style.transform =
-            `scaleX(${scaleX})`;
-
-        nameRight.style.transform =
-            `translateX(${extraWidth}px)`;
+        nameRight.style.left =
+            `${baseRightLeft + extraWidth}px`;
 
     });
 }
