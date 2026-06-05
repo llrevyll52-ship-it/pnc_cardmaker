@@ -61,8 +61,11 @@
 .name-left-layer {
     position: absolute;
 
-    left: 0;
-    top: 0;
+    left: 335px;
+    top: 2988px;
+
+    width: 300px;
+    height: auto;
 
     z-index: 20;
 }
@@ -70,9 +73,8 @@
 .name-line-layer {
     position: absolute;
 
-    /* 노란 밑줄 시작 위치 */
-    left: 46px;
-    top: 3208px;
+    left: 461px;
+    top: 3268px;
 
     width: 372px;
     height: 70px;
@@ -83,9 +85,8 @@
 .name-right-layer {
     position: absolute;
 
-    /* L8-name_line 오른쪽 끝에 붙는 위치 */
-    left: 418px;
-    top: 2926px;
+    left: 833px;
+    top: 2988px;
 
     width: 104px;
     height: 330px;
@@ -96,8 +97,8 @@
 .name-text {
     position: absolute;
 
-    left: 46px;
-    top: 2946px;
+    left: 470px;
+    top: 3016px;
 
     z-index: 30;
 
