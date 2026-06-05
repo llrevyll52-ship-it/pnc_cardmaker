@@ -14,7 +14,6 @@ const BASE_NAME = "이즈";
 
 const TEXT_X = 463;
 const LINE_X = 460;
-const NAME_R_GAP = 15;
 
 function applyPreviewScale() {
     cardCanvas.style.transform = `scale(${previewScale})`;
@@ -55,9 +54,6 @@ function updateName() {
         const lineWidth = Math.max(160, lineEnd - LINE_X);
 
         nameLine.style.width = `${lineWidth}px`;
-
-        const nameRightX = TEXT_X + textWidth + NAME_R_GAP;
-        nameRight.style.left = `${nameRightX}px`;
     });
 }
 
