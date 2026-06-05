@@ -15,16 +15,25 @@
 
             <div class="card-canvas" id="cardCanvas">
 
-                <!-- 기본 레이어 -->
+                <!-- 09. 캐릭터 이미지 삽입 예정 영역 -->
+                <!-- 프레임보다 아래에 배치 -->
+                <div class="character-layer" id="characterLayer"></div>
+
+                <!-- 08. 기본 프레임 / 최하단 기준 레이어 -->
                 <img class="layer frame-layer" src="cardmaker/08-frame/L1-frame.png" alt="">
+
+                <!-- 07. 타이틀 -->
                 <img class="layer title-layer" src="cardmaker/07-title/L4-title.png" alt="">
 
-                <!-- 이름 영역 -->
+                <!-- 07. 프레임 라인 / 타이틀보다 위 -->
+                <img class="layer frame-line-layer" src="cardmaker/07-title/L3-frame_line.png" alt="">
+
+                <!-- 06. 이름 영역 -->
                 <img class="layer name-left-layer" src="cardmaker/06-name/L9-name_L.png" alt="">
                 <img class="layer name-line-layer" id="nameLine" src="cardmaker/06-name/L8-name_line.png" alt="">
                 <img class="layer name-right-layer" id="nameRight" src="cardmaker/06-name/L7-name_R.png" alt="">
 
-                <!-- 입력 이름 -->
+                <!-- 이름 텍스트 -->
                 <div class="name-text" id="nameText">NOAH</div>
 
             </div>
