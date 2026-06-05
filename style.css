@@ -121,13 +121,23 @@ body {
         0 0 18px rgba(0, 0, 0, 0.60);
 }
 
+.name-right-window {
+    position: absolute;
+    left: 987px;
+    top: 3013px;
+    width: 104px;
+    height: 330px;
+    overflow: hidden;
+    z-index: 34;
+    pointer-events: none;
+}
+
 .name-right-layer {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -987px;
+    top: -3013px;
     width: 2600px;
     height: 3600px;
-    z-index: 34;
     pointer-events: none;
 }
 
