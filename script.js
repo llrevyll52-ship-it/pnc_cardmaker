@@ -1,7 +1,7 @@
 const nameInput = document.getElementById("nameInput");
 const nameText = document.getElementById("nameText");
 const cardCanvas = document.getElementById("cardCanvas");
-const nameLine = document.getElementById("nameLine");
+const nameBar = document.getElementById("nameBar");
 const nameRight = document.getElementById("nameRight");
 
 let previewScale = 0.32;
@@ -16,19 +16,24 @@ function applyPreviewScale() {
 
 function updateName() {
     const value = nameInput.value.trim() || "이즈";
+
     nameText.textContent = value;
 
     requestAnimationFrame(() => {
-        const textWidth = nameText.getBoundingClientRect().width;
+        const textWidth =
+            nameText.getBoundingClientRect().width;
 
-        const leftStart = 68;
+        const barWidth =
+            Math.max(180, textWidth * 0.9);
 
-        // PSD 기준
-        const lineWidth = textWidth + 25;
-        const rightLeft = leftStart + textWidth + 40;
+        const rightLeft =
+            470 + textWidth + 30;
 
-        nameLine.style.width = `${lineWidth}px`;
-        nameRight.style.left = `${rightLeft}px`;
+        nameBar.style.width =
+            `${barWidth}px`;
+
+        nameRight.style.left =
+            `${rightLeft}px`;
     });
 }
 
