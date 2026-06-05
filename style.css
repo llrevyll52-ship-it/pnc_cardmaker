@@ -70,8 +70,9 @@
 .name-line-layer {
     position: absolute;
 
-    left: 428px;
-    top: 3220px;
+    /* 노란 밑줄 시작 위치 */
+    left: 46px;
+    top: 3208px;
 
     width: 372px;
     height: 70px;
@@ -82,8 +83,9 @@
 .name-right-layer {
     position: absolute;
 
-    left: 800px;
-    top: 2948px;
+    /* L8-name_line 오른쪽 끝에 붙는 위치 */
+    left: 418px;
+    top: 2926px;
 
     width: 104px;
     height: 330px;
@@ -91,28 +93,27 @@
     z-index: 22;
 }
 
-/* 이름 텍스트 */
 .name-text {
     position: absolute;
 
-    left: 428px;
-    top: 2998px;
+    left: 46px;
+    top: 2946px;
 
     z-index: 30;
 
     color: #ffffff;
 
     font-family: "Avenir Black", "Arial Black", Arial, sans-serif;
-
     font-size: 320px;
-
     line-height: 1;
-
     letter-spacing: -8px;
-
     white-space: nowrap;
 
     text-shadow:
+        2px 0 #ffffff,
+        -2px 0 #ffffff,
+        0 2px #ffffff,
+        0 -2px #ffffff,
         0 10px 10px rgba(0, 0, 0, 0.75),
         0 0 18px rgba(0, 0, 0, 0.60);
 }
