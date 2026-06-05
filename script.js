@@ -1,6 +1,7 @@
 const nameInput = document.getElementById("nameInput");
 const nameText = document.getElementById("nameText");
 const nameLine = document.getElementById("nameLine");
+const nameRight = document.getElementById("nameRight");
 const cardCanvas = document.getElementById("cardCanvas");
 
 let previewScale = 0.32;
@@ -13,14 +14,7 @@ const BASE_NAME = "이즈";
 
 const TEXT_X = 463;
 const LINE_X = 460;
-
-function getNameFontSize(length) {
-    if (length <= 2) return 320;
-    if (length === 3) return 300;
-    if (length === 4) return 275;
-    if (length === 5) return 250;
-    return 225;
-}
+const NAME_R_GAP = 15;
 
 function applyPreviewScale() {
     cardCanvas.style.transform = `scale(${previewScale})`;
@@ -50,9 +44,6 @@ function updateName() {
 
     nameText.textContent = value;
     setNameFont(value);
-
-    nameText.style.fontSize = `${getNameFontSize(length)}px`;
-
     nameText.style.fontSize = `${getNameFontSize(length)}px`;
 
     requestAnimationFrame(() => {
@@ -64,6 +55,9 @@ function updateName() {
         const lineWidth = Math.max(160, lineEnd - LINE_X);
 
         nameLine.style.width = `${lineWidth}px`;
+
+        const nameRightX = TEXT_X + textWidth + NAME_R_GAP;
+        nameRight.style.left = `${nameRightX}px`;
     });
 }
 
