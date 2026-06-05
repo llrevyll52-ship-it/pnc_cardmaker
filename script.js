@@ -15,13 +15,13 @@ function applyPreviewScale() {
 }
 
 function updateName() {
-    const value = nameInput.value.trim() || "NAME";
+    const value = nameInput.value.trim() || "이즈";
     nameText.textContent = value;
 
     requestAnimationFrame(() => {
-        const baseTextWidth = 372;
+        const baseTextWidth = 330;
         const baseLineWidth = 372;
-        const baseRightLeft = 418;
+        const baseRightLeft = 833;
 
         const textWidth = nameText.getBoundingClientRect().width;
         const extraWidth = Math.max(0, textWidth - baseTextWidth);
