@@ -62,6 +62,10 @@ function updateName() {
 }
 
 function handleZoom(event) {
+    if (event.target === nameInput) {
+        return;
+    }
+
     const key = event.key;
 
     if (key !== "+" && key !== "=" && key !== "-") {
