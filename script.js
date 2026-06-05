@@ -1,12 +1,33 @@
-console.log("PNC Card Maker Loaded");
+const nameInput = document.getElementById("nameInput");
+const nameText = document.getElementById("nameText");
+const nameLine = document.getElementById("nameLine");
+const nameRight = document.getElementById("nameRight");
 
-const cardName = document.getElementById("cardName");
-const cardTitle = document.getElementById("cardTitle");
+const BASE_LINE_WIDTH = 663;
+const TEXT_START_X = 82;
+const RIGHT_OFFSET = 48;
 
-cardName.addEventListener("input", () => {
-    console.log("이름:", cardName.value);
-});
+function updateName() {
+    const value = nameInput.value.trim() || "NAME";
 
-cardTitle.addEventListener("input", () => {
-    console.log("타이틀:", cardTitle.value);
-});
+    nameText.textContent = value;
+
+    requestAnimationFrame(() => {
+        const textWidth = nameText.getBoundingClientRect().width / 0.32;
+
+        const estimatedLastCharWidth = textWidth / value.length;
+        const lineEnd =
+            TEXT_START_X +
+            textWidth -
+            estimatedLastCharWidth * 0.7;
+
+        const newLineWidth = Math.max(BASE_LINE_WIDTH, lineEnd);
+
+        nameLine.style.width = `${newLineWidth}px`;
+        nameRight.style.left = `${newLineWidth - RIGHT_OFFSET}px`;
+    });
+}
+
+nameInput.addEventListener("input", updateName);
+
+window.addEventListener("load", updateName);
