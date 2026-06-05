@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Avenir Black";
+    src: url("./Avenir%20Black/fonts/Avenir%20Black.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,17 +27,12 @@ body {
     overflow: auto;
 }
 
-.preview-wrap {
-    width: 780px;
-}
-
 .card-canvas {
     position: relative;
     width: 2600px;
     height: 3600px;
-    transform: scale(0.3);
+    transform: scale(0.32);
     transform-origin: top left;
-    background: transparent;
 }
 
 .layer {
@@ -44,126 +44,99 @@ body {
     pointer-events: none;
 }
 
+/* 이름 영역 */
 .name-group {
     position: absolute;
     left: 428px;
     top: 2998px;
+    width: 900px;
     height: 345px;
 }
 
-.name-left {
+#nameLeft,
+#nameLine,
+#nameRight {
     position: absolute;
-    left: 0;
     top: 0;
+    pointer-events: none;
 }
 
-.name-line {
-    position: absolute;
+#nameLeft {
     left: 0;
-    top: 0;
+}
+
+#nameLine {
+    left: 0;
     width: 663px;
     height: 345px;
 }
 
-.name-right {
-    position: absolute;
+#nameRight {
     left: 0;
-    top: 0;
 }
 
-.name-text {
+#nameText {
     position: absolute;
+
     left: 82px;
-    top: 65px;
+    top: 18px;
+
     color: #ffffff;
+
     font-family: "Avenir Black", "Arial Black", Arial, sans-serif;
-    font-size: 116px;
-    font-weight: 900;
+
+    font-size: 320px;
+
     line-height: 1;
-    letter-spacing: -2px;
+
+    letter-spacing: -8px;
+
     white-space: nowrap;
+
     text-shadow:
-        0 5px 5px rgba(0, 0, 0, 0.75),
-        0 0 8px rgba(0, 0, 0, 0.65);
+        0 12px 12px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.7);
 }
 
+/* 우측 작업 패널 */
 .control-panel {
     width: 420px;
     min-width: 420px;
+    height: fit-content;
 
     background: #f2f2f2;
     color: #333;
 
     border-radius: 24px;
-
     padding: 24px;
 
     display: flex;
     flex-direction: column;
     gap: 18px;
-
-    height: fit-content;
 }
 
 .control-panel h1 {
     text-align: center;
     color: #d90000;
-    font-size: 32px;
-}
-
-.tool-tabs {
-    display: flex;
-    gap: 6px;
-
-    background: #e7e7e7;
-
-    padding: 6px;
-
-    border-radius: 12px;
-}
-
-.tool-tab {
-    flex: 1;
-
-    border: none;
-
-    background: transparent;
-
-    padding: 12px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-weight: 700;
-}
-
-.tool-tab.active {
-    background: white;
-    color: #d90000;
+    font-size: 30px;
 }
 
 .tool-tip {
     background: #ffe5e5;
-
     color: #ff2e2e;
 
     border-radius: 12px;
-
     padding: 14px;
 
     font-size: 14px;
-
     line-height: 1.5;
 }
 
 .section-title {
     font-size: 20px;
-
     font-weight: 700;
 
     border-bottom: 2px solid #333;
-
     padding-bottom: 6px;
 }
 
@@ -179,27 +152,23 @@ body {
 
 .input-group input {
     border: 1px solid #ccc;
-
     border-radius: 10px;
-
     padding: 12px;
+    font-size: 15px;
 }
 
 .primary-button {
     margin-top: 12px;
 
     background: #d90000;
-
     color: white;
 
     border: none;
-
     border-radius: 12px;
 
     padding: 14px;
 
     font-size: 16px;
-
     font-weight: 700;
 
     cursor: pointer;
