@@ -57,7 +57,7 @@ function updateName() {
         nameLine.style.width = `${lineWidth}px`;
 
         const nameRightX = TEXT_X + textWidth + NAME_R_GAP;
-        nameRight.style.left = `${nameRightX}px`;
+        nameRight.style.transform = `translateX(${nameRightX - 987}px)`;
     });
 }
 
