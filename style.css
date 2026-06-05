@@ -125,9 +125,10 @@ body {
     position: absolute;
     left: 987px;
     top: 3013px;
-    width: auto;
-    height: auto;
+    width: 104px;
+    height: 330px;
     z-index: 34;
+    pointer-events: none;
 }
 
 /* ========================= */
