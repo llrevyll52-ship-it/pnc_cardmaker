@@ -59,22 +59,11 @@ body {
 /* 숫자가 작을수록 위 */
 /* ========================= */
 
-.character-layer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2600px;
-    height: 3600px;
-    z-index: 10;
-}
+.character-layer { z-index: 1; }
 
-.frame-layer {
-    z-index: 20;
-}
+.frame-layer { z-index: 10; }
 
-.title-layer {
-    z-index: 30;
-}
+.title-layer { z-index: 20; }
 
 .name-layer {
     position: absolute;
@@ -82,53 +71,35 @@ body {
     top: 0;
     width: 2600px;
     height: 3600px;
-    z-index: 40;
+    z-index: 30;
     pointer-events: none;
 }
 
-.frame-line-layer {
-    z-index: 45;
-}
+.frame-line-layer { z-index: 40; }
 
-.class-layer {
-    z-index: 50;
-}
+.class-layer { z-index: 50; }
 
-.condition-layer {
-    z-index: 60;
-}
+.condition-layer { z-index: 60; }
 
 .combine-left-layer,
-.combine-right-layer {
-    z-index: 70;
-}
+.combine-right-layer { z-index: 70; }
 
-.force-layer {
-    z-index: 80;
-}
-
-/* ========================= */
-/* 이름 영역 */
-/* 2600×3600 캔버스 기준 */
-/* ========================= */
+.force-layer { z-index: 80; }
 
 .name-left-layer {
     position: absolute;
     left: 428px;
     top: 2998px;
-    width: 73px;
-    height: 60px;
-    z-index: 41;
+    z-index: 31;
 }
 
 .name-text {
     position: absolute;
     left: 463px;
     top: 3014px;
+    z-index: 33;
 
-    z-index: 43;
-
-    color: #ffffff;
+    color: #fff;
     font-family: "Esamanru", Arial, sans-serif;
     font-size: 320px;
     font-weight: 700;
@@ -136,8 +107,7 @@ body {
     letter-spacing: 0;
     white-space: nowrap;
 
-    -webkit-text-stroke: 2px #ffffff;
-
+    -webkit-text-stroke: 2px #fff;
     text-shadow:
         0 10px 10px rgba(0, 0, 0, 0.75),
         0 0 18px rgba(0, 0, 0, 0.60);
@@ -148,28 +118,35 @@ body {
 }
 
 .name-text.font-eng {
-    font-family: "Avenir Black", Arial Black, Arial, sans-serif;
+    font-family: "Avenir Black", "Arial Black", Arial, sans-serif;
 }
 
 .name-line {
     position: absolute;
     left: 460px;
     top: 3267px;
-
     width: 527px;
     height: 70px;
-
     background: #fff200;
-    z-index: 42;
+    z-index: 32;
+}
+
+.name-right-window {
+    position: absolute;
+    left: 987px;
+    top: 3013px;
+    width: 120px;
+    height: 330px;
+    overflow: hidden;
+    z-index: 34;
 }
 
 .name-right-layer {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -987px;
+    top: -3013px;
     width: 2600px;
     height: 3600px;
-    z-index: 44;
 }
 
 /* ========================= */
