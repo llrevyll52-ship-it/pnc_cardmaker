@@ -40,58 +40,45 @@
 /* frame_line */
 /* title 위 */
 .frame-line-layer {
-    z-index: 11;
+    z-index: 40;
 }
 
 /* 06 - 이름 */
 .name-parts {
     position: absolute;
-
     left: 0;
     top: 0;
-
     width: 2600px;
     height: 3600px;
-
-    z-index: 20;
-
+    z-index: 50;
     pointer-events: none;
 }
 
 .name-left-layer {
     position: absolute;
-
-    left: 335px;
-    top: 2988px;
-
+    left: 300px;
+    top: 2975px;
     width: 300px;
     height: auto;
-
-    z-index: 20;
+    z-index: 50;
 }
 
 .name-line-layer {
     position: absolute;
-
-    left: 461px;
-    top: 3268px;
-
+    left: 340px;
+    top: 3262px;
     width: 372px;
     height: 70px;
-
-    z-index: 21;
+    z-index: 51;
 }
 
 .name-right-layer {
     position: absolute;
-
-    left: 833px;
-    top: 2988px;
-
+    left: 712px;
+    top: 2975px;
     width: 104px;
     height: 330px;
-
-    z-index: 22;
+    z-index: 52;
 }
 
 .name-text {
