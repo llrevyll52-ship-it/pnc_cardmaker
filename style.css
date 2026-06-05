@@ -44,16 +44,34 @@
 }
 
 /* 06 - 이름 */
+.name-parts {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 2600px;
+    height: 3600px;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
 .name-left-layer {
     z-index: 20;
 }
 
 .name-line-layer {
     z-index: 21;
+
+    transform-origin: left center;
 }
 
 .name-right-layer {
     z-index: 22;
+
+    transform-origin: left center;
 }
 
 /* 이름 텍스트 */
