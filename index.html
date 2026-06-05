@@ -8,26 +8,31 @@
 </head>
 <body>
     <main class="app">
-        <section class="preview-area">
-            <div class="card-preview">
-                <img class="card-layer" src="cardmaker/08-frame/L0-frame.png" alt="card frame">
+        <section class="preview-panel">
+            <div class="preview-wrap">
+                <div class="card-canvas" id="cardCanvas">
+                    <img class="layer frame" src="cardmaker/08-frame/L1-frame.png" alt="">
+                    <img class="layer title-layer" src="cardmaker/07-title/L4-title.png" alt="">
+
+                    <div class="name-group" id="nameGroup">
+                        <img class="name-left" src="cardmaker/06-name/L9-name_L.png" alt="">
+                        <img class="name-line" id="nameLine" src="cardmaker/06-name/L8-name_line.png" alt="">
+                        <img class="name-right" id="nameRight" src="cardmaker/06-name/L7-name_R.png" alt="">
+                        <div class="name-text" id="nameText">NOAH</div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="control-area">
+        <section class="control-panel">
             <h1>PNC Card Maker</h1>
 
             <label>
-                카드 이름
-                <input type="text" id="cardName" placeholder="이름 입력">
+                이름
+                <input type="text" id="nameInput" value="NOAH">
             </label>
 
-            <label>
-                타이틀
-                <input type="text" id="cardTitle" placeholder="타이틀 입력">
-            </label>
-
-            <button id="downloadBtn">PNG 저장</button>
+            <button id="downloadBtn" type="button">PNG 저장</button>
         </section>
     </main>
 
