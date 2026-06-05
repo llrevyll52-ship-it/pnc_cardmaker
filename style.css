@@ -44,58 +44,71 @@ body {
     pointer-events: none;
 }
 
+.frame-layer {
+    z-index: 1;
+}
+
+.title-layer {
+    z-index: 2;
+}
+
 /* 이름 영역 */
 .name-group {
     position: absolute;
     left: 428px;
     top: 2998px;
-    width: 900px;
+    width: 1500px;
     height: 345px;
+    z-index: 10;
 }
 
-#nameLeft,
-#nameLine,
-#nameRight {
+.name-part {
     position: absolute;
-    top: 0;
     pointer-events: none;
 }
 
-#nameLeft {
+.name-left {
     left: 0;
+    top: 0;
+    width: 73px;
+    height: 60px;
+    z-index: 5;
 }
 
-#nameLine {
-    left: 0;
-    width: 663px;
-    height: 345px;
+.name-line {
+    left: 73px;
+    top: 172px;
+    width: 372px;
+    height: 70px;
+    z-index: 6;
+    transform-origin: left center;
 }
 
-#nameRight {
-    left: 0;
+.name-right {
+    left: 445px;
+    top: 0;
+    width: 104px;
+    height: 330px;
+    z-index: 7;
 }
 
-#nameText {
+.name-text {
     position: absolute;
-
     left: 82px;
-    top: 18px;
+    top: -22px;
+
+    z-index: 20;
 
     color: #ffffff;
-
     font-family: "Avenir Black", "Arial Black", Arial, sans-serif;
-
     font-size: 320px;
-
     line-height: 1;
-
     letter-spacing: -8px;
-
     white-space: nowrap;
 
     text-shadow:
-        0 12px 12px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(0, 0, 0, 0.7);
+        0 10px 10px rgba(0, 0, 0, 0.75),
+        0 0 18px rgba(0, 0, 0, 0.6);
 }
 
 /* 우측 작업 패널 */
