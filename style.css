@@ -59,19 +59,36 @@
 }
 
 .name-left-layer {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
     z-index: 20;
 }
 
 .name-line-layer {
-    z-index: 21;
+    position: absolute;
 
-    transform-origin: left center;
+    left: 428px;
+    top: 3220px;
+
+    width: 372px;
+    height: 70px;
+
+    z-index: 21;
 }
 
 .name-right-layer {
-    z-index: 22;
+    position: absolute;
 
-    transform-origin: left center;
+    left: 800px;
+    top: 2948px;
+
+    width: 104px;
+    height: 330px;
+
+    z-index: 22;
 }
 
 /* 이름 텍스트 */
