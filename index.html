@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PNC Card Maker</title>https://github.com/llrevyll52-ship-it/pnc_cardmaker/tree/main
-
+    <title>PNC Card Maker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main class="app">
+        <section class="preview-area">
+            <div class="card-preview">
+                <img class="card-layer" src="cardmaker/08-frame/L0-frame.png" alt="card frame">
+            </div>
+        </section>
 
-    <h1>PNC Card Maker</h1>
+        <section class="control-area">
+            <h1>PNC Card Maker</h1>
+
+            <label>
+                카드 이름
+                <input type="text" id="cardName" placeholder="이름 입력">
+            </label>
+
+            <label>
+                타이틀
+                <input type="text" id="cardTitle" placeholder="타이틀 입력">
+            </label>
+
+            <button id="downloadBtn">PNG 저장</button>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
