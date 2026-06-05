@@ -1,6 +1,8 @@
 const nameInput = document.getElementById("nameInput");
 const nameText = document.getElementById("nameText");
 const cardCanvas = document.getElementById("cardCanvas");
+const nameLine = document.getElementById("nameLine");
+const nameRight = document.getElementById("nameRight");
 
 let previewScale = 0.32;
 
@@ -13,8 +15,32 @@ function applyPreviewScale() {
 }
 
 function updateName() {
-    const value = nameInput.value.trim() || "NAME";
+
+    const value =
+        nameInput.value.trim() || "NAME";
+
     nameText.textContent = value;
+
+    requestAnimationFrame(() => {
+
+        const textWidth =
+            nameText.getBoundingClientRect().width;
+
+        const baseWidth = 700;
+
+        const extraWidth =
+            Math.max(0, textWidth - baseWidth);
+
+        const scaleX =
+            1 + (extraWidth / 400);
+
+        nameLine.style.transform =
+            `scaleX(${scaleX})`;
+
+        nameRight.style.transform =
+            `translateX(${extraWidth}px)`;
+
+    });
 }
 
 function handleZoom(event) {
